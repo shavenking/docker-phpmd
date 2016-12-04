@@ -1,6 +1,6 @@
-FROM php:7-cli
+FROM php:7-alpine
 
-RUN apt-get update && apt-get install -y libbz2-dev \
+RUN apk add --no-cache bzip2-dev \
     && docker-php-ext-install bz2
 
 RUN curl -L http://static.phpmd.org/php/latest/phpmd.phar \
